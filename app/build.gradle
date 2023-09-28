@@ -1,11 +1,11 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'com.android.library'
+    id 'kotlin-android'
     id 'maven-publish'
 }
 
-group = 'com.biteam.qurtobasdk'
-version = '1.0'
+group = library_group
+version = library_version
 
 android {
     namespace 'com.biteam.qurtobasdk'
@@ -34,11 +34,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.4.3'
+        kotlinCompilerExtensionVersion = compose_version
     }
 }
 
@@ -61,15 +62,15 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.biteam.qurtobasdk'
-//                artifactId = 'SharedUI'
-//                version = '1.0'
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = library_group
+                artifactId = 'SharedUI'
+                version =  library_version
+            }
+        }
+    }
+}

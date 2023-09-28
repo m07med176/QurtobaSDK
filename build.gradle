@@ -1,11 +1,16 @@
 buildscript {
-    ext.kotlin_version = "1.6.10"
+    ext{
+        compose_version = '1.2.0'
+        kotlin_version = "1.7.0"
+        library_group = 'com.biteam.qurtobasdk'
+        library_version = '1.0'
+    }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.0.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
