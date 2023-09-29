@@ -3,7 +3,7 @@ buildscript {
         compose_version = '1.2.0'
         kotlin_version = "1.7.0"
         library_group = 'com.biteam.qurtobasdk'
-        library_version = '1.0'
+        library_version = '2.0'
     }
     repositories {
         google()
